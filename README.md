@@ -1,4 +1,4 @@
-# digital-logic-design
+# Digital Logic Design using VHDL
 All material in this repo will cover the VHDL and CAD tools.  Additional topics will include Boolean algebra, combinational logic circuits, minimization techniques, AND, OR, NOT, NAND, NOR gates, implementation of sequential circuits, and synthesis techniques of logic circuits using VHDL.  The lab deliverables will consist of simple gate implementations and digital systems such as a simple processor.
 
 
