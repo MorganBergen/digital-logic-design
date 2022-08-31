@@ -1,0 +1,124 @@
+/*
+
+Xilinx Vivado v2019.2.1 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2729669 on Thu Dec  5 04:49:17 MST 2019
+IP Build: 2729494 on Thu Dec  5 07:38:25 MST 2019
+
+Process ID (PID): 23744
+License: Customer
+
+Current time: 	Tue Aug 30 16:22:05 CDT 2022
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1280x1024
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 657 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	m358b583
+User home directory: C:/Users/m358b583
+User working directory: H:/Documents/EECS140-Lab/lab1/project_1
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/m358b583/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/m358b583/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/m358b583/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	H:/Documents/EECS140-Lab/lab1/project_1/vivado.log
+Vivado journal file location: 	H:/Documents/EECS140-Lab/lab1/project_1/vivado.jou
+Engine tmp dir: 	H:/Documents/EECS140-Lab/lab1/project_1/.Xil/Vivado-23744-ENGR-38XJ7X2
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@engrprdlmap01.home.ku.edu
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 635 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: H:\Documents\EECS140-Lab\lab1\project_1\project_1.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project H:/Documents/EECS140-Lab/lab1/project_1/project_1.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 657 MB. GUI used memory: 44 MB. Current time: 8/30/22, 4:22:07 PM CDT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project H:/Documents/EECS140-Lab/lab1/project_1/project_1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 86 MB (+87595kb) [00:00:18]
+// [Engine Memory]: 711 MB (+594577kb) [00:00:18]
+// [GUI Memory]: 98 MB (+8636kb) [00:00:20]
+// [Engine Memory]: 765 MB (+18843kb) [00:00:20]
+// WARNING: HEventQueue.dispatchEvent() is taking  4039 ms.
+// [Engine Memory]: 829 MB (+26643kb) [00:00:24]
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2216 ms. Increasing delay to 3000 ms.
+// Project name: project_1; location: H:/Documents/EECS140-Lab/lab1/project_1; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 859.305 ; gain = 242.309 
+dismissDialog("Open Project"); // bB (cr)
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking 778ms to process. Increasing delay to 4000 ms.
+// Tcl Message: update_compile_order -fileset sources_1 
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4795 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1801 ms. Increasing delay to 5403 ms.
+// TclEventType: RUN_STATUS_CHANGE
+// [GUI Memory]: 105 MB (+1654kb) [00:01:23]
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2223 ms. Increasing delay to 5000 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
