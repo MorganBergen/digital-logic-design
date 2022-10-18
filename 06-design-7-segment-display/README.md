@@ -8,5 +8,4 @@ The driver will have the ability to take a 4-bit binary number from the slide sw
 
 This is what the following output will look like...
 
-
-![image](https://user-images.githubusercontent.com/65584733/196549027-16966760-a379-4361-a690-cd008182aa0c.gif)
+<img align="left" width=10% src="https://user-images.githubusercontent.com/65584733/196549027-16966760-a379-4361-a690-cd008182aa0c.gif">
