@@ -1,0 +1,42 @@
+# lab07
+
+
+
+1.Introduction and Background
+• Introduction to modular design for VHDL using the bottom-up approach.
+• Learn to implement Component Declaration, Signal Declaration, and Component
+Instantiation.
+• Use Xilinx Vivado software to create a new XDC file for top level inputs and
+outputs.
+• We will follow a generic procedure for any design implementation.
+o First step is Design description. Figure out what problem you are trying to solve. Can we use us divide and conquer to simplify parts of the design?
+o Second step is Interface Description. Will your design have input and output sources? Figure out what they are and draw a block diagram showing inputs coming in and outputs going out.
+o Third step is Problem Decomposition. Figure out what level of decomposition you need to be able to implement your design’s main components.
+• Test and run functionality with six – 1-bit inputs and one 6-bit long input (vector). Use 6 - FPGA slide switches and 1 – Output LED.
+2. Implementation Process
+• Equipment used: Vivado Design Suite, DIGILENT BASYS 3 Board (Figure 1), PC and USB Communication Cable.
+• First, started with a top-level Entity design to create an entity using the generic procedures for design implementation. Created an entity that accepts 6 – 1-bit inputs and 1 – output XOR gate. We are unsure what other components are needed so we start by creating a 2-bit XOR gate.
+• Second, create a 2-bit XOR Gate using the generic procedures for design implementation. Figure 2 shows the VHDL implementation for the first my_xor2_gate component.
+• Third, we create another XOR gate called my_xor3_gate with more inputs to complete a 6-bit XOR gate. Will use the my_xor2_gate as a Component for the Entity implementation of my_xor3_gate. Then will Instantiate it twice to make a 3 – bit XOR gate. Figure 3 shows the my_xor3_gate VHDL implementation.
+• Fourth, return to the top-level Entity created called my_xor6_gate and use components my_xor2_gate and my_xor3_gate to create a 6-way XOR-gate. Figure 4a, 4b, and 4c shows the VHDL implementation for my_xor6_gate.
+• Sixth step is to add constraints to my_xor6_gate to have six 1-bit inputs. See Figure 5 for constraints.
+• Seventh step, run a successful synthesis, implementation and a bitstream.
+
+
+Figure 1: BASYS 3 Board and VIVADO Software
+
+
+4. Results & Discussion
+The testing procedure using the XOR truth tables resulted in the circuit working correctly. Figure 7 shows the block diagram of how the inputs are being implemented. 3 inputs enter the UVW of my_xor3_gate and 3 inputs enter XYZ of the second my_xor3_gate. Both outputs are then used for the inputs of my_xor2_gate which result in Output I.
+After the test was successful, I modified the constraints and behavior of the my_xor6_gate to support STD_LOGIC_VECTORs. Created a new source with 1 input as X and 1 output as Y. I specified the BUS MSB 0 and LSB 5 for the switches (X) input. The constraints were modified using [ ]. Then ran a successful synthesis, implementation and bitstream generation. Circuit worked correctly per the truth tables.
+VHDL implementation used for using one 6-bit input
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY my_xor6gate IS PORT (
+X : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+Y: OUT STD_LOGIC); END my_xor6_gate;
+ARCHITECTURE Behavioral of my_xor6_gate IS BEGIN
+y <= X(5) XOR X(4) XOR X(3) XOR X(2) XOR X(1) XOR X(0); END ARCHITECTURE Structural;
+5. Conclusion and Recommendations
+I learned how to follow the generic procedures to design a circuit implementation. Learned how the component declaration functions, learned about signal declarations, and component instantiation/port mapping. Breaking down your design into more manageable steps makes it easier to evaluate the correct behavior of the design. This tutorial was very helpful to interpret the VHDL components and understand how they function. It could be a very challenging process without following a procedure. This way of attacking a design implementation was very useful.:w
+
