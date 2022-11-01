@@ -1,0 +1,43 @@
+EECS 140 Prelab Four Bit Adder1
+
+Objective:
+
+The objective of this laboratory exercise is for you to learn how to use modular design in VHDL to create a real world application by implementing an adder unit into an FPGA chip and display the addition results.
+
+You will use Xilinx Vivado software to implement a 4-bit adder circuit.  You will then connect the result of the adder to the input of your display drivers (from the previous lab).  Finally, you will download the circuit design to the board and will test proper functionality of the circuit.  An eight bit slide switch will be used for implementing two 4-bit numbers as inputs, the addition will be outputted onto two seven segment displays.
+
+PreLab Questions:
+
+1. Why did we have to negate the outputs of the seven segment display?
+
+The reason we had to negate the outputs of the seven segment display is because the seven segment display is active low. This means that when the output is high, the display is off and when the output is low, the display is on.
+
+2.  If we wanted the display to light up the left seven segment LEDs instead of the right ones, what would we change?
+
+You would change the truth table to the following:
+
+truth table:
+
+digits	a	b	c	d	e	f	g
+0	hi	hi	hi	hi	hi	hi	lw
+1	hi	hi	hi	hi	hi	hi	lw
+2	hi	lw	hi	hi	lw	hi	hi
+3	hi	lw	lw	hi	hi	hi	hi
+4	lw	hi	lw	lw	hi	hi	hi
+5	hi	hi	lw	hi	hi	lw	hi
+6	hi	hi	hi	hi	hi	lw	hi
+7	hi	lw	lw	lw	hi	hi	lw
+8	hi	hi	hi	hi	hi	hi	hi
+9	hi	hi	lw	lw	hi	hi	hi
+
+3.  What's the basic component we will use to implement our 4-bit adder?
+
+The basic component we will use to implement is the module bit_full_adder which is the basis of the 4 bit full adder.
+
+4.  What kind of 4-bit adder are we designing?
+
+The kind of 4-bit adder were designing is a ripple carry full adder.
+
+5.  What is the significance of the "Anodes" (AN0, AN1, AN2, and AN3)?
+
+The importance of the anodes AN0, AN1, AN2, AN3 is that they are anodes that take care of the enabling or disabling of the seven segment display digits.  Digit 0 is enabled or disabled by AN0, digit 1 by AN1, digit 2 by AN2, digit 3 by AN3.
