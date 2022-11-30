@@ -196,8 +196,6 @@ Next are the 4 display drivers (analogous to the [`display_driver.vhd`](https://
 `display_driver_4.vhd`
 
 
-
-
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -284,7 +282,6 @@ E - - L
 L O V E
 ```
 
-
  - = "1111110" = "abcdegf"
  L = "1110001" = "abcdefg"
  O = "0000001" = "abcdefg"
@@ -293,24 +290,6 @@ L O V E
 
 ### `display_driver_2.vhd`
 
-```vhdl
--
--
-L
-O
-V
-E
-_
-_
-L
-O
-V
-E
-_
-_
-L
-O
-```
 
 ### `display_driver_1.vhd`
 
@@ -455,15 +434,14 @@ L  "1110001" when x"F" ,
 	  d = 0
 0110000
 
-## - = "1111110" = "abcdegf"
-## L = "1110001" = "abcdefg"
-## O = "0000001" = "abcdefg"
-## V = "1000001" = "abcdefg"
-## E = "0110000" = "abcdefg"
-````
+- = "1111110" = "abcdegf"
+L = "1110001" = "abcdefg"
+O = "0000001" = "abcdefg"
+V = "1000001" = "abcdefg"
+ E = "0110000" = "abcdefg"
 
+```
 ## source 7 [`LEDdisplay.vhd`](https://wiki.ittc.ku.edu/ittc_wiki/images/4/4b/LEDdisplay.vhd)
-
 
 ```vhdl
 library ieee;
@@ -520,8 +498,6 @@ dispMUX61: MUXF5 port map (seg1(6),Input2(6),Input3(6),Control(0));
 dispMUX62: MUXF6 port map (Output(6),seg0(6),seg1(6),Control(1));
 
 END procedural;
-
-
 
 
 --top level LED display--
@@ -619,9 +595,18 @@ The toplevel structural VHDL module for the block diagram is provided below, I w
 
 - declare components `clock divider`, `counter`, `display_driver_1`, `display_driver_2`, `display_driver_3`, `display_driver_4`, `LEDdisplay`
 
-- declare signals `m_clk`, `cn_out`, `sigs
+- declare signals `m_clk`, `cn_out`, `sig_segments1`, `sig_segments2`, `sig_segments3`, `sig_segments4`
 
-# `toplevel.xdc`
+- component instantiation / port mapping
+
+- all ports defined in toplevel.vhd should be mapped using constraints file to implement the design
+
+## `toplevel.xdc`
+
+- before creating constraints file, ensure that hierarchical design is established over all other sources
+
+- pull from the following constraints and modify variable so the defined Toplevel entity matches with the declared contraints file as well.`
 
 7.  [report](#report)
 
+write the report
