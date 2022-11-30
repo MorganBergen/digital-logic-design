@@ -7,7 +7,7 @@
 3.  [block diagram](#block-diagram)
 4.  [components in design](#components)
 	1.  [source 1 `clock-divider.vhd`](#source-1-clock-dividervhd)
-	2.  [source 2 `counter.vhd`](#source-2-countervhd)\
+	2.  [source 2 `counter.vhd`](#source-2-countervhd)
 	3.  [source 3 - 6 `display-driver-3-6.vhd`](#source-3---6-display-driver-3-6vhd)
 	4.  [source 7 `LEDdisplay.vhd`](#source-7-LEDDisplayvhd)
 	5.  [source 8 `toplevel.vhd`](#source-8-toplevelvhd)
@@ -18,8 +18,7 @@
 
 The objective of this laboratory exercise is to learn how to use modular design in VHDL to display a scrolling phrase up to 16 characters long on the 4 7-segment displays on the Basys 3 board.
 
-
-![img](https://wiki.ittc.ku.edu/ittc_wiki/images/e/e3/EECS140_Lab5_SevenSegment.gif)
+![img](./assets/final.png)
 
 ### prerequisites
 
