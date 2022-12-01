@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Encoder is
 	Port ( x : in STD_LOGIC_VECTOR(0 to 7);
-	       y : in STD_LOGIC_VECTOR(0 to 2));
+	       y : out STD_LOGIC_VECTOR(0 to 2));
 
 end Encoder;
 
