@@ -45,20 +45,19 @@ Step-wise refinement tasks in order to complete this program.
 
 The following are questions that address the major precondition for this program.
 
-1.  what is the purpose of a latch?
+**1.  What is the purpose of a latch?**
 
 	The purpose of a latch is to store a single bit of information, and to change that information when a signal is applied to the latch.
 
-2.  how many flip-flops are required to implement a 16-bit register?
+**2.  How many flip-flops are required to implement a 16-bit register?**
 
 	`n` flip-flips are required to implement a `n`-bit register, thus 16 flip-flops are required to implement a 16-bit register.
 
-3.  What is the purpose of the `VHDL ATTRIBUTE` statement in the code snippet shown on the following [figure](##figure)
+**3.  What is the purpose of the `VHDL ATTRIBUTE` statement in the code snippet shown on the following [figure](##figure)**
 
+**4.  How will we test the functionality of the gated D latch in this lab?**
 
-4.  How will we test the functionality of the gated D latch in this program?
-
-5.  Suppose you are given a 100-MHz signal, how will you generate a 50-MHz and 25-MHz clock signal? 
+**5.  Suppose you are given a 100-MHz signal, how will you generate a 50-MHz and 25-MHz clock signal?**
 
 ### signal frequency
 
@@ -97,8 +96,60 @@ $$ 100 \text{MHz} = \frac{100 \text{MHz}}{2} = 50 \text{MHz} $$
 
 $$ 100 \text{MHz} = \frac{100 \text{MHz}}{4} = 25 \text{MHz} $$
 
+### step 1 diagram
+
+
+Xilinx FPGAs include flip-flops that are available for implementing a users' circuit.  Later in this README there will be an explaination on how to make use of these flip-flops.  However initially, the following will show how storage elements can be created in a FPGA without using its dedicated flip-flops.
+
+The following figure depicts a **gated RS latch circuit**.  
+
+A style of VHDL code that uses logic expressions to describe this circuit is given in the code snippet below.  If this latch is implemented in a FPGA that has 4-input look-up tables (LUTs), then the only one lookup table is needed.
+
+[figure 1 - gated RS latch](#figure-1---gated-rs-latch)
+
+### figure 1 - gated RS latch circuit
+
+`RS-latch` circuit inputs and outputs
+
+| input R | input S | output Q |       state of latch       |
+|:-------:|:-------:|:--------:|:--------------------------:|
+|    0    |    0    |    0     |  maintain existing state   |
+|    0    |    1    |    1     |           Set state	    |
+|    1    |    0    |    0     |          Reset state	    |
+|    1    |    1    |    0     | undefined or illegal state |
 
 
 
+```vhdl
+-- A gated RS latch described the hard way
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY RSLatch IS
+    PORT ( Clk, R, S : IN STD_LOGIC;
+           Q         : OUT STD_LOGIC);
 
+END RSLatch ;
+
+ARCHITECTURE Structural OF RSLatch IS
+
+	SIGNAL R_g, S_g, Qa, Qb : STD_LOGIC ;
+
+	ATTRIBUTE keep : boolean;
+	
+	ATTRIBUTE keep of R_g, S_g, Qa, Qb : SIGNAL IS true;
+
+BEGIN
+	R_g <= R AND Clk;
+  	
+	S_g <= S AND Clk;
+  	
+	Qa <= NOT (R_g OR Qb);
+  	
+	Qb <= NOT (S_g OR Qa);
+  	
+	Q <= Qa;
+
+END Structural;
+
+```
