@@ -100,7 +100,6 @@ $$ 100 \text{MHz} = \frac{100 \text{MHz}}{4} = 25 \text{MHz} $$
 
 ### figure 1 - gated `RS-latch` circuit
 
-
 <p align="center">
 	<img src="./assets/diagram-rs-latch.png" />
 </p>
@@ -147,12 +146,38 @@ BEGIN
   	
 	S_g <= S AND Clk;
   	
-	Qa <= NOT (R_g OR Qb);
+	Qa  <= NOT (R_g OR Qb);
   	
-	Qb <= NOT (S_g OR Qa);
+	Qb  <= NOT (S_g OR Qa);
   	
-	Q <= Qa;
+	Q   <= Qa;
 
 END Structural;
 
 ```
+
+Although the latch can be correctly realized in one 4-input LUT (lookup tables), this implementation does not allow its interal signals, such as `R_g` adn `S_g` to be observed, because they are not provided as outputs from the LUT.  In order to preserve these internal signals in the implemented circuit, it is necessary to include a _compiler directive_ in the code.  In the VHDL code above the directive keep is included by using a `VHDL ATTRIBUTE` statement; it instructs the compiler to use separate logic elements for each of the signals `R_g`, `S_g`, `Qa`, and `Qb`.  
+
+Compiling the code produces the circuit four `4-LUTs` depicted below the diagram in 
+
+[figure 1 - gated `RS-latch` circuit and 4-LUTs](#figure-1---gated-rs-latch-circuit-and-4-luts)
+
+<p align="center">
+	<img src="./assets/rs-latch-LUT.png" />
+</p>
+
+## step 2 RSLatch
+
+creating a new Vivado project for the RS latch circuit as follows
+
+1.  new project for the RS latch on the H:// drive
+
+2.  generate a VHDL file with the code shown above and include it in the project
+
+3.  add a testbench source file to the project (see below for the RSLatch testbench
+
+4.  run simulation
+
+5.  click on zoom fit icon in simulation results window to view entire result in one screen
+
+
