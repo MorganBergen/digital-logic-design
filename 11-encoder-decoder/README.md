@@ -111,14 +111,17 @@ end Decoder;
 architecture Behavioral of Decoder is
 
 begin
+
+	
 	y(0) <= (not x(0)) and (not x(1)) and (not x(2));
 	y(1) <= (    x(0)) and (not x(1)) and (not x(2));
-	y(2) <= (not x(0)) and (    x(1)) and (not x(2));
-	y(3) <= (    x(0)) and (    x(1)) and (    x(2));
-	y(4) <= (not x(0)) and (not x(1)) and (    x(2));
-	y(5) <= (    x(0)) and (not x(1)) and (    x(2));
-	y(6) <= (not x(0)) and (    x(1)) and (    x(2));
-	y(7) <= (    x(0)) and (    x(1)) and (    x(2));
+   	y(2) <= (not x(0)) and (    x(1)) and (not x(2));
+    	y(3) <= (    x(0)) and (    x(1)) and (    x(2));
+    	y(4) <= (not x(0)) and (not x(1)) and (    x(2));
+    	y(5) <= (    x(0)) and (not x(1)) and (    x(2));
+    	y(6) <= (not x(0)) and (    x(1)) and (    x(2));
+    	y(7) <= (    x(0)) and (    x(1)) and (    x(2));
+
 
 end Behavioral;
 ```
@@ -180,5 +183,74 @@ begin
 
 end Behavioral;
 ```
+
+---------------------------------------
+
+the final aspects of the decoders and encoders are the necessary constraints files
+
+**deconder constraints**
+```vhdl
+## constraints file for decoder 
+
+## Switches
+set_property PACKAGE_PIN U1 [get_ports {x[0]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[0]}]
+set_property PACKAGE_PIN T1 [get_ports {x[1]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[1]}]
+set_property PACKAGE_PIN R2 [get_ports {x[2]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[2]}]
+
+
+## LEDs
+set_property PACKAGE_PIN V13 [get_ports {y[0]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[0]}]
+set_property PACKAGE_PIN V3 [get_ports {y[1]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[1]}]
+set_property PACKAGE_PIN W3 [get_ports {y[2]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[2]}]
+set_property PACKAGE_PIN U3 [get_ports {y[3]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[3]}]
+set_property PACKAGE_PIN P3 [get_ports {y[4]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[4]}]
+set_property PACKAGE_PIN N3 [get_ports {y[5]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[5]}]
+set_property PACKAGE_PIN P1 [get_ports {y[6]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[6]}]
+set_property PACKAGE_PIN L1 [get_ports {y[7]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[7]}]
+```
+
+**encoder constraints**
+```vhdl
+## constraints file for encoder
+
+## Switches
+set_property PACKAGE_PIN V17 [get_ports {x[0]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[0]}]
+set_property PACKAGE_PIN V16 [get_ports {x[1]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[1]}]
+set_property PACKAGE_PIN W16 [get_ports {x[2]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[2]}]
+set_property PACKAGE_PIN W17 [get_ports {x[3]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[3]}]
+set_property PACKAGE_PIN W15 [get_ports {x[4]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[4]}]
+set_property PACKAGE_PIN V15 [get_ports {x[5]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[5]}]
+set_property PACKAGE_PIN W14 [get_ports {x[6]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {x[6]}]
+
+## LEDs
+set_property PACKAGE_PIN U16 [get_ports {y[0]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[0]}]
+set_property PACKAGE_PIN E19 [get_ports {y[1]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[1]}]
+set_property PACKAGE_PIN U19 [get_ports {y[2]}]
+        set_property IOSTANDARD LVCMOS33 [get_ports {y[2]}]
+```
+
+### report
+
+write report
 
 
