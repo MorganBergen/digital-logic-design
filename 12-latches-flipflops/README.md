@@ -53,8 +53,7 @@ The following are questions that address the major precondition for this program
 
 	`n` flip-flips are required to implement a `n`-bit register, thus 16 flip-flops are required to implement a 16-bit register.
 
-**3.  What is the purpose of the `VHDL ATTRIBUTE` statement in the code snippet shown on the following [figure 1 - gated RS latch](#figure-1---gated-rs-latch)**
-
+**3.  What is the purpose of the `VHDL ATTRIBUTE` statement in the code snippet shown on the following** [figure 1 - gated `RS-latch` circuit](#figure-1---gated-rs-latch)
 
 **4.  How will we test the functionality of the gated D latch in this lab?**
 
@@ -97,9 +96,10 @@ $$ 100 \text{MHz} = \frac{100 \text{MHz}}{2} = 50 \text{MHz} $$
 
 $$ 100 \text{MHz} = \frac{100 \text{MHz}}{4} = 25 \text{MHz} $$
 
-### step 1 diagram
+## step 1 diagram
 
-### figure 1 - gated RS latch circuit
+### figure 1 - gated `RS-latch` circuit
+
 
 <p align="center">
 	<img src="./assets/diagram-rs-latch.png" />
