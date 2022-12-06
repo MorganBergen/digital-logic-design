@@ -247,8 +247,11 @@ END;
 
 ## step 3 gated D latch
 
-
 the following figure shows the circuit for a gated D latch.  This will be used to as the implementation for the latch on the Basys3 board 
+
+<p align="center">
+	<img src="./assets/diagram-d-latch.png" />
+</p>
 
 ```vhdl
 set_property seversity {Warning} [get_drc_checks LUTLP-1]
