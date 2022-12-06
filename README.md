@@ -7,3 +7,6 @@ All material in this repo will cover the VHDL and CAD tools. Additional topics w
 Dr. McNaughton is the professor for this course.
 
 <img src="https://user-images.githubusercontent.com/65584733/186497780-c5679577-0472-40c6-a35f-ca7a49abaac4.jpeg" width=50% height=50%>
+
+
+
