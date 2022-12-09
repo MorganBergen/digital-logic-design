@@ -1,5 +1,15 @@
 # digital-logic-design
 
+[home](https://resilinets.org/eecs_140_lab.html#Lab_9:_Arithmetic_Logic_Unit)
+
+All material in this repo will cover the VHDL and CAD tools. Additional topics will include Boolean algebra, combinational logic circuits, minimization techniques, AND, OR, NOT, NAND, NOR gates, implementation of sequential circuits, and synthesis techniques of logic circuits using VHDL. The lab deliverables will consist of simple gate implementations and digital systems such as a simple processor.
+
+Dr. McNaughton is the professor for this course.
+
+<img src="https://user-images.githubusercontent.com/65584733/186497780-c5679577-0472-40c6-a35f-ca7a49abaac4.jpeg" width=50% height=50%>
+
+The following is an example of such program motivated from this course
+
 ## latches, flip-flops, registers
 
 **table of contents**
@@ -64,7 +74,7 @@ The following are questions that address the major precondition for this program
 ### signal frequency
 
 <p align="center">
-	<img src="./assets/freq.gif" width="200" align="center" />
+	<img src="./12-latches-flipflops/assets/freq.gif" width="200" align="center" />
 </p>
 
 megahertz (106 Hz, MHz) is a unit of frequency equal to one million hertz (1,000,000 Hz).  The symbol for megahertz is MHz.  The symbol for hertz is Hz.
@@ -103,7 +113,7 @@ $$ 100 \text{MHz} = \frac{100 \text{MHz}}{4} = 25 \text{MHz} $$
 ### figure 1 - gated `RS-latch` circuit
 
 <p align="center">
-	<img src="./assets/diagram-rs-latch.png" />
+	<img src="./12-latches-flipflops/assets/diagram-rs-latch.png" />
 </p>
 
 Xilinx FPGAs include flip-flops that are available for implementing a users' circuit.  Later in this README there will be an explaination on how to make use of these flip-flops.  However initially, the following will show how storage elements can be created in a FPGA without using its dedicated flip-flops.
@@ -165,7 +175,7 @@ Compiling the code produces the circuit four `4-LUTs` depicted below the diagram
 [figure 1 - gated `RS-latch` circuit and 4-LUTs](#figure-1---gated-rs-latch-circuit-and-4-luts)
 
 <p align="center">
-	<img src="./assets/rs-latch-LUT.png" />
+	<img src="./12-latches-flipflops/assets/rs-latch-LUT.png" />
 </p>
 
 ## step 2 RSLatch
@@ -240,11 +250,11 @@ END;
 **simulation results**
 
 <p align="center">
-	<img src="./assets/01-waveform.png" />
+	<img src="./12-latches-flipflops/assets/01-waveform.png" />
 </p>
 
 <p align="center">
-	<img src="./assets/00-waveform.png" />
+	<img src="./12-latches-flipflops/assets/00-waveform.png" />
 </p>
 
 ## step 3 gated D latch
@@ -252,7 +262,7 @@ END;
 the following figure shows the circuit for a gated D latch.  This will be used to as the implementation for the latch on the Basys3 board 
 
 <p align="center">
-	<img src="./assets/diagram-d-latch.png" />
+	<img src="./12-latches-flipflops/assets/diagram-d-latch.png" />
 </p>
 
 ```vhdl
@@ -455,14 +465,5 @@ set_property seversity {Warning} [get_drc_checks LUTLP-1]
 
 60 directories, 131 files
 ```
-
-[home](https://resilinets.org/eecs_140_lab.html#Lab_9:_Arithmetic_Logic_Unit)
-
-All material in this repo will cover the VHDL and CAD tools. Additional topics will include Boolean algebra, combinational logic circuits, minimization techniques, AND, OR, NOT, NAND, NOR gates, implementation of sequential circuits, and synthesis techniques of logic circuits using VHDL. The lab deliverables will consist of simple gate implementations and digital systems such as a simple processor.
-
-Dr. McNaughton is the professor for this course.
-
-<img src="https://user-images.githubusercontent.com/65584733/186497780-c5679577-0472-40c6-a35f-ca7a49abaac4.jpeg" width=50% height=50%>
-
 
 
